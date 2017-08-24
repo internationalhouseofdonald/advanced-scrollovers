@@ -3,33 +3,28 @@ import './styles.scss';
 import video from './components/development/bham.mp4';
 
 $(document).ready(function() {
-  var position_of_element = $('.r2').offset();
-  console.log(position_of_element.top);
-  $(window).resize(function() {
-    var width = document.body.clientWidth;
-    var is_sm = false;
-    console.log(width);
-    if (width >= 559) {
-      is_sm = true;
-    }
+  var cards = document.getElementsByClassName('card');
+  var offsets = new Array;
+  Object.keys(cards).forEach(function(element) {
+    offsets.push(cards[element].offsetTop);
   });
+  console.log(offsets);
+  
   $(document).on("scroll", function() {
-    var pos_y = window.scrollY;
-    console.log(pos_y);
-    if (pos_y >= 1) {
-      $('.r2').animate({
-        opacity: 1,
-        top: "0px"
-      }, 1000, "easeInOutCubic");
-    }
-    if (pos_y >= 1200) {
-      $('.r3').animate({
-        opacity: 1,
-        top: "0px"
-      }, 1000, "easeInOutCubic");
-    }
+    var posY = window.scrollY + 280;
+    console.log(posY);
+    offsets.forEach(function(element, index) {
+      if (posY > element) {
+        console.log("Element " + index + " is in viewport");
+      }
+    })
   });
-  $('.bkgd-video').src = video;
-})
+
+});
+
+
+
+
+
 
 // use jQuery easing to animate scrollovers into place

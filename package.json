@@ -1,7 +1,7 @@
 {
   "name": "top-notch-brew",
   "version": "1.0.0",
-  "description": "Top Notch Brew",
+  "description": "Advanced Scrollovers",
   "main": "webpack.config.js",
   "repository": "?.git",
   "scripts": {
