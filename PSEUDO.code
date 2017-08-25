@@ -8,7 +8,7 @@ min-width: 575px {
   Elements appear in rows
 }
 
-Pinterest Board Scrollovers {
+"Masonic" Scrollovers {
   Elements appear as they are positioned
     relative to the scroll position.
 }
